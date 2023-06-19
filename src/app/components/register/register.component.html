@@ -1,0 +1,25 @@
+<div class="cadastro-container">
+  <h1>Cadastro</h1>
+  <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" placeholder="Digite seu nome" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="cpf" placeholder="Digite seu CPF" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Digite seu email" required>
+      <mat-error *ngIf="cadastroForm.get('email').hasError('required')">Email é obrigatório</mat-error>
+      <mat-error *ngIf="cadastroForm.get('email').hasError('email')">Email inválido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Senha</mat-label>
+      <input matInput formControlName="senha" type="password" placeholder="Digite sua senha" required>
+      <mat-error *ngIf="cadastroForm
+    </div>

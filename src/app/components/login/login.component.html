@@ -1,0 +1,29 @@
+<div class="form-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <img src="./assets/logo.png" class="logo">
+
+    <div>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="username" placeholder="Entre com seu email" required>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="password" type="password" placeholder="Entre com sua senha" required>
+      </mat-form-field>
+    </div>
+
+    <div class="button-container">
+      <button mat-stroked-button color="primary">Cadastrar</button>
+      <button mat-raised-button color="primary" (click)="login()">Entrar</button>
+    </div>
+
+    <!-- Exibição da mensagem de erro -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>
